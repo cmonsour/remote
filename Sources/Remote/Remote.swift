@@ -5,17 +5,17 @@ import Distributed
 import WebSocketActors
 
 extension NodeIdentity {
-   public static let server = NodeIdentity(id: "server")
+   public static let server = NodeIdentity(id: "kidcom_server")
 }
 
 extension ActorIdentity {
-   public static let greeter = ActorIdentity(id: "greeter", node: .server)
+   public static let kidComChatbot = ActorIdentity(id: "chatbot", node: .server)
 }
 
-public distributed actor Greeter {
+public distributed actor Chatbot {
    public typealias ActorSystem = WebSocketActorSystem
 
-   public distributed func greet(name: String) -> String {
-      return "Hello, \(name)!"
+   public distributed func sendMessage(text: String) -> String {
+      return "Hello, \(text)!"
    }
 }
