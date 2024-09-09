@@ -5,11 +5,11 @@ import Distributed
 import WebSocketActors
 
 extension NodeIdentity {
-   public static let server = NodeIdentity(id: "kidcom_server")
+   public static let server = NodeIdentity(id: "server")
 }
 
 extension ActorIdentity {
-   public static let kidComChatbot = ActorIdentity(id: "chatbot", node: .server)
+   public static let chatbot = ActorIdentity(id: "chatbot", node: .server)
 }
 
 public distributed actor Chatbot {
